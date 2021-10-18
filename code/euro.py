@@ -55,7 +55,7 @@ class Euro2(thinkbayes.Suite):
         """
         x = hypo / 100.0
         heads, tails = data
-        like = comb(heads, heads+tails)*x**heads * (1-x)**tails  # combination should be added?
+        like = comb(heads, heads+tails)*x**heads * (1-x)**tails  # it seems that combination should be added?
         return like
 
 
