@@ -25,6 +25,7 @@ rather than fair?"
 
 import thinkbayes
 import thinkplot
+from scipy.special import comb, perm
 
 
 class Euro(thinkbayes.Suite):
@@ -54,7 +55,7 @@ class Euro2(thinkbayes.Suite):
         """
         x = hypo / 100.0
         heads, tails = data
-        like = x**heads * (1-x)**tails
+        like = comb(heads, heads+tails)*x**heads * (1-x)**tails  # combination should be added?
         return like
 
 
